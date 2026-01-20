@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:new_app/data/constants.dart';
+import 'package:new_app/views/pages/select_path_page.dart';
 import 'package:new_app/views/widgets/indicator_dot.dart';
 import 'package:new_app/views/widgets/step_counter.dart';
 
@@ -256,51 +257,63 @@ class CreateProfilePage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 20),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
-                                      colors: [
-                                        Color(0xFF9810FA),
-                                        Color(0xFF0092B8),
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  padding: const EdgeInsets.all(
-                                    1.5,
-                                  ), // border thickness
+                                GestureDetector(
+                                  onTap: () {
+                                    if (controller.text.trim().isNotEmpty) {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => SelectPathPage(),
+                                          ),
+                                        );
+                                      }
+                                  },
                                   child: Container(
-                                    width: 345.28,
-                                    height: 59.96,
                                     decoration: BoxDecoration(
-                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      gradient: const LinearGradient(
+                                        colors: [
+                                          Color(0xFF9810FA),
+                                          Color(0xFF0092B8),
+                                        ],
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                      ),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Continue',
-                                          style: GoogleFonts.orbitron(
-                                            fontSize: 16,
-                                            letterSpacing: 0.8,
-                                            fontWeight: FontWeight.w400,
-                                            color: const Color.fromRGBO(
-                                              238,
-                                              238,
-                                              238,
-                                              1,
+                                    padding: const EdgeInsets.all(
+                                      1.5,
+                                    ), // border thickness
+                                    child: Container(
+                                      width: 345.28,
+                                      height: 59.96,
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromRGBO(0, 0, 0, 1),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Continue',
+                                            style: GoogleFonts.orbitron(
+                                              fontSize: 16,
+                                              letterSpacing: 0.8,
+                                              fontWeight: FontWeight.w400,
+                                              color: const Color.fromRGBO(
+                                                238,
+                                                238,
+                                                238,
+                                                1,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Image.asset(
-                                          'assets/buttons/right_arrow.png',
-                                        ),
-                                      ],
+                                          const SizedBox(width: 8),
+                                          Image.asset(
+                                            'assets/buttons/right_arrow.png',
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
