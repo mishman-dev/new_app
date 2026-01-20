@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:new_app/views/pages/create_profile_page.dart';
 
 class AwakenBtn extends StatelessWidget {
   const AwakenBtn({super.key});
@@ -21,19 +22,26 @@ class AwakenBtn extends StatelessWidget {
       ],
     ),
   ),
-  child: Container(
-    decoration: BoxDecoration(
-      color: Colors.black, // inner background
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Center(
-      child: Text(
-        'START AWAKENING',
-        style: GoogleFonts.orbitron(
-          fontSize: 16,
-          letterSpacing: 0.8,
-          fontWeight: FontWeight.w400,
-          color: Color.fromRGBO(238, 238, 238, 1),
+  child: GestureDetector(
+    onTap: () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) {
+        return CreateProfilePage();
+      },));
+    },
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.black, // inner background
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: Text(
+          'START AWAKENING',
+          style: GoogleFonts.orbitron(
+            fontSize: 16,
+            letterSpacing: 0.8,
+            fontWeight: FontWeight.w400,
+            color: Color.fromRGBO(238, 238, 238, 1),
+          ),
         ),
       ),
     ),

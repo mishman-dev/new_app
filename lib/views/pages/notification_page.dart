@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:new_app/views/widgets/awaken_btn.dart';
 import 'package:new_app/views/widgets/main_text.dart';
 import 'package:new_app/views/widgets/notification_btn.dart';
-import 'package:new_app/views/widgets/spark_circle.dart';
+import 'package:new_app/views/widgets/indicator_dot.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -12,7 +12,7 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SparkCircle(),
+        SparkCircle(icon:'spark'),
         SizedBox(height:22.96 ,),
         NotificationBtn(),
         SizedBox(height:22.96 ,),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SparkCircle extends StatelessWidget {
-  const SparkCircle({super.key});
+  final String icon; // declare the icon parameter
+
+  const SparkCircle({super.key, required this.icon}); // mark as required
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +34,17 @@ class SparkCircle extends StatelessWidget {
                 Color(0xFF0092B8),
               ],
             ),
-            image: const DecorationImage(
-              image: AssetImage('assets/buttons/spark.png'),
-              fit: BoxFit.scaleDown, 
+            image: DecorationImage(
+              image: AssetImage('assets/buttons/$icon.png'), // use the parameter
+              fit: BoxFit.scaleDown,
               alignment: Alignment.center,
             ),
             boxShadow: [
               BoxShadow(
-                color: Color(0xFFA855F7).withOpacity(0.62),
+                color: const Color(0xFFA855F7).withOpacity(0.62),
                 blurRadius: 35.19,
                 spreadRadius: 0,
-                offset: Offset(0, 0),
+                offset: const Offset(0, 0),
               ),
             ],
           ),

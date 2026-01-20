@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/data/constants.dart';
 import 'package:new_app/views/widget_tree.dart';
 
 void main() {
@@ -12,7 +13,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false ,
-      home: WidgetTree(),
+      home: Container(
+        width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        gradient: backgroundGradient,
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: WidgetTree()),
+          ])))
     );
   }
 }
