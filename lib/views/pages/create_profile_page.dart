@@ -295,7 +295,7 @@ class CreateProfilePage extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Continue',
+                                            'CONTINUE',
                                             style: GoogleFonts.orbitron(
                                               fontSize: 16,
                                               letterSpacing: 0.8,
